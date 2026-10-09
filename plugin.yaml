@@ -1,0 +1,18 @@
+name: guarded-delivery-admission
+version: 0.1.0
+manifest_version: 2
+kind: standalone
+description: Read-only live dispatcher ownership admission; no delivery execution capability.
+author: k3rn3l
+license: GPL-3.0-or-later
+provides_tools:
+  - guarded_delivery_admission
+config_schema:
+  policy_path:
+    type: str
+    required: true
+    description: Absolute operator-selected admission-only policy; not a tool argument.
+  policy_sha256:
+    type: str
+    required: true
+    description: Exact reviewed policy digest; changes invalidate registration.

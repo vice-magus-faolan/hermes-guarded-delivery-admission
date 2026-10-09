@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "mode": "admission-only",
+  "board": "example-board",
+  "owner_task": "t_12345678",
+  "profile": "example-worker",
+  "board_db": "/absolute/private/board.db",
+  "runtime": {
+    "exposure": "native-worker-process",
+    "source_root": "/absolute/hermes-source",
+    "interpreter": {
+      "path": "/absolute/physical/python3",
+      "sha256": "REPLACE_WITH_REVIEWED_64_LOWERCASE_HEX"
+    },
+    "files": {
+      "agent/delegation_context.py": "REPLACE_WITH_REVIEWED_64_LOWERCASE_HEX",
+      "hermes_cli/kanban_db_dispatch.py": "REPLACE_WITH_REVIEWED_64_LOWERCASE_HEX"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "/absolute/physical/admission/__init__.py",
+      "sha256": "REPLACE_WITH_REVIEWED_64_LOWERCASE_HEX"
+    }
+  ],
+  "permissions": ["preflight"],
+  "delivery_contract": {
+    "repository": "/absolute/repository",
+    "target_ref": "refs/heads/main",
+    "review_task": "t_87654321",
+    "candidate_sha": "REPLACE_WITH_REVIEWED_40_LOWERCASE_HEX",
+    "expected_old_sha": "REPLACE_WITH_REVIEWED_40_LOWERCASE_HEX",
+    "transport": "local",
+    "executables": []
+  }
+}
